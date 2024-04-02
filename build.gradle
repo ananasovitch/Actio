@@ -15,7 +15,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
-    finalizedBy jacocoTestReport // Генерировать отчёт после запуска тестов
+    finalizedBy jacocoTestReport // генерировать отчёт после запуска тестов
 }
 
 jacocoTestReport {
@@ -26,8 +26,10 @@ jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = 1.0 // 100% line coverage
+                minimum = 1.0// Установка минимального покрытия 100%
             }
         }
     }
 }
+
+

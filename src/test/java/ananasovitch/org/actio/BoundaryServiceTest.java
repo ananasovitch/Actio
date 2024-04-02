@@ -1,6 +1,7 @@
 package ananasovitch.org.actio;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,6 +14,7 @@ import java.util.stream.Stream;
 public class BoundaryServiceTest {
 
     private final BoundaryService boundaryService = new BoundaryService();
+
 
     static Stream<Arguments> provideData() {
         return Stream.of(
@@ -30,6 +32,9 @@ public class BoundaryServiceTest {
     @ParameterizedTest(name = "Test {index}: Минимальный элемент массива {0} равен {1}")
     @MethodSource("provideData")
     void testFindMin(int[] marks, int expectedMin) {
+        if (marks[0] == 1) { // Намеренный провал теста для массива {1, 2, 3, 4, 5}
+            fail("Намеренная ошибка - тест провален для массива " + printArray(marks));
+        }
         int min = boundaryService.findMin(marks);
         assertEquals(expectedMin, min, "Минимальное значение неверно для массива " + printArray(marks));
     }
