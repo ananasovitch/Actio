@@ -22,10 +22,11 @@ public class BoundaryServiceTest {
                 arguments(new int[]{100, 5, 300, 20, 500}, 5),
                 arguments(new int[]{-10, -20, -3, -40, -5}, -40),
                 arguments(new int[]{10, 20, 30, 40, 5}, 5),
-                arguments(new int[]{1, 2, 3, 4, 5}, 1),  // Дополнительные данные
-                arguments(new int[]{0, 0, 0, 0, 0}, 0)   // Дополнительные данные
+                arguments(new int[]{1, 2, 3, 4, 5}, 1),
+                arguments(new int[]{0, 0, 0, 0, 0}, 0)
         );
     }
+
     @ParameterizedTest(name = "Test {index}: Минимальный элемент массива {0} равен {1}")
     @MethodSource("provideData")
     void testFindMin(int[] marks, int expectedMin) {
