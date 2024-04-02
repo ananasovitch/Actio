@@ -1,0 +1,31 @@
+# Ignore IntelliJ IDEA files
+**/.idea/
+**/*.iws
+**/*.iml
+**/*.ipr
+**/out/
+
+# Ignore Eclipse files
+**/.apt_generated
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings/
+**/.springBeans
+**/*.sts4-cache
+**/bin/
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**/.nb-gradle/
+**/.vscode/
+**/.DS_Store
+
+# Include .gradle directory
+!.gradle/
+# Project exclude paths
+/.gradle/
+/build/
+/build/classes/java/main/
+/build/classes/java/test/
