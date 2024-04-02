@@ -20,12 +20,12 @@ public class BoundaryServiceTest {
         return Stream.of(
                 arguments(new int[]{1, 2, 3, 4, 5}, 1),
                 arguments(new int[]{10, 20, 30, 40, 50}, 10),
-                arguments(new int[]{100, 200, 300, 400, 500}, 100)
-                /*arguments(new int[]{100, 5, 300, 20, 500}, 5),
+                arguments(new int[]{100, 200, 300, 400, 500}, 100),
+                arguments(new int[]{100, 5, 300, 20, 500}, 5),
                 arguments(new int[]{-10, -20, -3, -40, -5}, -40),
                 arguments(new int[]{10, 20, 30, 40, 5}, 5),
                 arguments(new int[]{1, 2, 3, 4, 5}, 1),
-                arguments(new int[]{0, 0, 0, 0, 0}, 0)*/
+                arguments(new int[]{0, 0, 0, 0, 0}, 0)
         );
     }
 
