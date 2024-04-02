@@ -1,0 +1,39 @@
+name: Java CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build with Gradle
+        run: ./gradlew build
+      - name: Run tests
+        run: ./gradlew test
+      - name: Generate code coverage report
+        run: ./gradlew jacocoTestReport
+      - name: Check code coverage
+        run: ./gradlew jacocoTestCoverageVerification
+
+  check-failing-tests:
+    needs: build
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Check failing tests
+        run: echo "Build failed due to failing tests"
+
+  check-code-coverage:
+    needs: build
+    runs-on: ubuntu-latest
+    if: failure()
+    steps:
+      - name: Check code coverage threshold
+        run: echo "Build failed due to insufficient code coverage"
